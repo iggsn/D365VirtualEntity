@@ -1,7 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
+using System.Web.OData.Batch;
+using System.Web.OData.Builder;
+using System.Web.OData.Extensions;
+using D365ODataService.Models;
+using Microsoft.OData.Edm;
 
 namespace D365ODataService
 {
@@ -9,16 +11,22 @@ namespace D365ODataService
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
+            config.MapODataServiceRoute("odata", null, GetEdmModel(), new DefaultODataBatchHandler(GlobalConfiguration.DefaultServer));
+            config.EnsureInitialized();
+        }
 
-            // Web API routes
-            config.MapHttpAttributeRoutes();
+        private static IEdmModel GetEdmModel()
+        {
+            ODataConventionModelBuilder builder = new ODataConventionModelBuilder
+            {
+                Namespace = "Demos",
+                ContainerName = "DefaultContainer"
+            };
 
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+            builder.EntitySet<Complaint>("Complaints");
+
+            var edmModel = builder.GetEdmModel();
+            return edmModel;
         }
     }
 }
