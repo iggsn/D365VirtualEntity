@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27625.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D365ODataService", "D365ODataService\D365ODataService.csproj", "{3F0D6A28-5921-4B68-AF10-47EBACEFCCAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F0D6A28-5921-4B68-AF10-47EBACEFCCAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F0D6A28-5921-4B68-AF10-47EBACEFCCAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F0D6A28-5921-4B68-AF10-47EBACEFCCAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F0D6A28-5921-4B68-AF10-47EBACEFCCAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {65E04AE2-CA21-41B4-87F8-8C17FC272D93}
+	EndGlobalSection
+EndGlobal
