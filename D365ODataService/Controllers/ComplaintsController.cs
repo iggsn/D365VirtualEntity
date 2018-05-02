@@ -19,11 +19,11 @@ namespace D365ODataService.Controllers
 
         public IHttpActionResult Get([FromODataUri] Guid key)
         {
-            IEnumerable<Complaint> compaints = DemoDataSource.Instance.Complaints.Where(m => m.Id == key);
-            if (!compaints.Any())
+            IEnumerable<Complaint> complaints = DemoDataSource.Instance.Complaints.Where(m => m.Id == key);
+            if (!complaints.Any())
                 return NotFound();
 
-            return Ok(compaints.FirstOrDefault());
+            return Ok(complaints.FirstOrDefault());
         }
     }
 }
